@@ -1,0 +1,393 @@
+<section id="zoom-section">
+    <div class="container-fluid">
+        <app-nav-bar></app-nav-bar>
+        <div class="row mt-4">
+            <app-nav-items></app-nav-items>
+        </div>
+        <!-- Banner/Slider -->
+        <div class="row">
+            <div class="banner col-12">
+                <img src="assets/img/homepage/banner-men.png" alt="" class="img-banner">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <!-- "Shop by your stlye" section -->
+        <div class="mt-4 mb-3">
+            <h1 class="mx-3 mb-3">Shop by your Style</h1>
+            <swiper [config]="configSwiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="" class="relative-container no-decoration">
+                            <img src="assets/img/homepage/streetwear-style-men.jpg" alt="" class="bg-img-style img-fluid col-12">
+                            <h4 class="text-shop-style text-white bold">Streetwear</h4>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="" class="relative-container no-decoration">
+                            <img src="assets/img/homepage/vintage-style-men.jpg" alt="" class="bg-img-style img-fluid col-12">
+                            <h4 class="text-shop-style text-white bold">Vintage</h4>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="" class="relative-container no-decoration">
+                            <img src="assets/img/homepage/luxury-style-men.jpg" alt="" class="bg-img-style img-fluid col-12">
+                            <h4 class="text-shop-style text-white bold">Luxury</h4>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="" class="relative-container no-decoration">
+                            <img src="assets/img/homepage/y2k-style-men.jpg" alt="" class="bg-img-style img-fluid col-12">
+                            <h4 class="text-shop-style text-white bold">Y2K</h4>
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-button-next d-md-none"></div>
+            </swiper>
+
+        </div>
+        <!-- "Our sections" section -->
+        <div class="mt-5 mb-3">
+            <h1 class="mx-3 mb-3">Our Sections</h1>
+            <div class="row justify-content-evenly">
+                <div class="col-4 justify-content-center">
+                    <div class="row">
+                        <a href="" class="relative-container no-decoration">
+                            <img src="assets/img/homepage/discover-men.jpg" alt="" class="bg-img-sections img-fluid col-12">
+                            <h5 class="text-shop-sections text-black bold bg-white p-2 px-3">Discover</h5>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 justify-content-center">
+                    <div class="row">
+                        <a href="" class="relative-container no-decoration">
+                            <img src="assets/img/homepage/sell-listing-men.jpg" alt="" class="bg-img-sections img-fluid col-12">
+                            <h5 class="text-shop-sections text-black bold bg-white p-2 px-3">Sell Listing</h5>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 justify-content-center">
+                    <div class="row">
+                        <a href="" class="relative-container no-decoration">
+                            <img src="assets/img/homepage/auction-listing-men.jpg" alt="" class="bg-img-sections img-fluid col-12">
+                            <h5 class="text-shop-sections text-black bold bg-white p-2 px-3">Auction Listing</h5>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- "Shop by Chothing" section -->
+        <div class="mt-5 mb-3">
+            <h1 class="mx-3 mb-4">Shop by Chothing</h1>
+            <swiper [config]="configSwiper2">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <div class="row">
+                            <a href="" class="text-center no-decoration">
+                                <img src="assets/img/footwear-men.png" alt="" class="bg-img-clothing">
+                                <h4 class="text-black">Footwear</h4>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="row">
+                            <a href="" class="text-center no-decoration">
+                                <img src="assets/img/tops-men.png" alt="" class="bg-img-clothing">
+                                <h4 class="text-black">Tops</h4>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="row">
+                            <a href="" class="text-center no-decoration">
+                                <img src="assets/img/bottoms-men.png" alt="" class="bg-img-clothing">
+                                <h4 class="text-black">Bottoms</h4>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="row">
+                            <a href="" class="text-center no-decoration">
+                                <img src="assets/img/tailoring-men.png" alt="" class="bg-img-clothing">
+                                <h4 class="text-black">Tailoring</h4>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="row">
+                            <a href="" class="text-center no-decoration">
+                                <img src="assets/img/outerwear-men.png" alt="" class="bg-img-clothing">
+                                <h4 class="text-black">Outerwear</h4>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="row">
+                            <a href="" class="text-center no-decoration">
+                                <img src="assets/img/accesories-men.jpg" alt="" class="bg-img-clothing">
+                                <h4 class="text-black">Accesories</h4>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Arrows
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                -->
+            </swiper>
+        </div>
+        <!-- For Sell section-->
+        <div class="mt-5 mb-3">
+            <h1 class="text-light-gray mb-0 mx-3 bold">For Sellers</h1>
+            <div class="row">
+                <h3 class="bold col-7 col-sm-8 col-lg-9 mx-3">Clothing trending now</h3>
+                <a href="" class="text-blue bold no-decoration col-3 col-lg-2 d-flex justify-content-end"><i>See More</i></a>
+            </div>
+            <!-- Items-->
+            <swiper [config]="configSwiper3">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="card border-light">
+                            <img src="assets/img/homepage/example.jpg" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h3 class="card-title bold mb-0">Title</h3>
+                                <h5 class="text-light-gray mb-0">Brand</h5>
+                                <h5 class="text-light-gray mb-0">Sizes/Condition</h5>
+                                <h3 class="bold mb-0">$Prices</h3>
+                                <p class="text-light-gray">+Shipping</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card border-light">
+                            <img src="assets/img/homepage/example.jpg" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h3 class="card-title bold mb-0">Title</h3>
+                                <h5 class="text-light-gray mb-0">Brand</h5>
+                                <h5 class="text-light-gray mb-0">Sizes/Condition</h5>
+                                <h3 class="bold mb-0">$Prices</h3>
+                                <p class="text-light-gray">+Shipping</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card border-light">
+                            <img src="assets/img/homepage/example.jpg" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h3 class="card-title bold mb-0">Title</h3>
+                                <h5 class="text-light-gray mb-0">Brand</h5>
+                                <h5 class="text-light-gray mb-0">Sizes/Condition</h5>
+                                <h3 class="bold mb-0">$Prices</h3>
+                                <p class="text-light-gray">+Shipping</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card border-light">
+                            <img src="assets/img/homepage/example.jpg" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h3 class="card-title bold mb-0">Title</h3>
+                                <h5 class="text-light-gray mb-0">Brand</h5>
+                                <h5 class="text-light-gray mb-0">Sizes/Condition</h5>
+                                <h3 class="bold mb-0">$Prices</h3>
+                                <p class="text-light-gray">+Shipping</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </swiper>
+        </div>
+        <!-- "For Auction" section-->
+        <div class="mt-3">
+            <h1 class="text-light-gray mb-0 mx-3 bold">For Auction</h1>
+            <div class="row">
+                <h3 class="bold col-7 col-sm-8 col-lg-9 mx-3">Auction trending now</h3>
+                <a href="" class="text-blue bold no-decoration col-3 col-lg-2 d-flex justify-content-end"><i>See More</i></a>
+            </div>
+            <!-- Items-->
+            <swiper [config]="configSwiper3">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="card border-light">
+                            <img src="assets/img/homepage/example.jpg" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <div class="row ms-1" style="height: 10px;">
+                                    <div class="progress border-rounded bg-ultralight-gray px-0 col-9">
+                                        <div class="progress-bar border-rounded" role="progressbar" style="width: 60%; background: rgb(80, 160, 255);" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <h6 class="text-blue bold col-3">30d</h6>
+                                </div>
+                                <h3 class="card-title bold mb-0">Title</h3>
+                                <h5 class="text-light-gray mb-0">Brand</h5>
+                                <h5 class="text-light-gray mb-0">Sizes/Condition</h5>
+                                <div class="row">
+                                    <button class="btn bold col-6 p-0">Current Bid</button>
+                                    <button class="btn text-mustard bold col-6 p-0">Direct Buy</button>
+                                    <h3 class="bold col-6 mb-0">$Price</h3>
+                                    <h3 class="bold col-6 mb-0">$Price</h3>
+                                    <p class="offset-6 text-light-gray">+Shipping</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card border-light">
+                            <img src="assets/img/homepage/example.jpg" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <div class="row ms-1" style="height: 10px;">
+                                    <div class="progress border-rounded bg-ultralight-gray px-0 col-9">
+                                        <div class="progress-bar border-rounded" role="progressbar" style="width: 60%; background: rgb(80, 160, 255);" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <h6 class="text-blue bold col-3">30d</h6>
+                                </div>
+                                <h3 class="card-title bold mb-0">Title</h3>
+                                <h5 class="text-light-gray mb-0">Brand</h5>
+                                <h5 class="text-light-gray mb-0">Sizes/Condition</h5>
+                                <div class="row">
+                                    <button class="btn bold col-6 p-0">Current Bid</button>
+                                    <button class="btn text-mustard bold col-6 p-0">Direct Buy</button>
+                                    <h3 class="bold col-6 mb-0">$Price</h3>
+                                    <h3 class="bold col-6 mb-0">$Price</h3>
+                                    <p class="offset-6 text-light-gray">+Shipping</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card border-light">
+                            <img src="assets/img/homepage/example.jpg" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <div class="row ms-1" style="height: 10px;">
+                                    <div class="progress border-rounded bg-ultralight-gray px-0 col-9">
+                                        <div class="progress-bar border-rounded" role="progressbar" style="width: 60%; background: rgb(80, 160, 255);" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <h6 class="text-blue bold col-3">30d</h6>
+                                </div>
+                                <h3 class="card-title bold mb-0">Title</h3>
+                                <h5 class="text-light-gray mb-0">Brand</h5>
+                                <h5 class="text-light-gray mb-0">Sizes/Condition</h5>
+                                <div class="row">
+                                    <button class="btn bold col-6 p-0">Current Bid</button>
+                                    <button class="btn text-mustard bold col-6 p-0">Direct Buy</button>
+                                    <h3 class="bold col-6 mb-0">$Price</h3>
+                                    <h3 class="bold col-6 mb-0">$Price</h3>
+                                    <p class="offset-6 text-light-gray">+Shipping</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card border-light">
+                            <img src="assets/img/homepage/example.jpg" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <div class="row ms-1" style="height: 10px;">
+                                    <div class="progress border-rounded bg-ultralight-gray px-0 col-9">
+                                        <div class="progress-bar border-rounded" role="progressbar" style="width: 60%; background: rgb(80, 160, 255);" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <h6 class="text-blue bold col-3">30d</h6>
+                                </div>
+                                <h3 class="card-title bold mb-0">Title</h3>
+                                <h5 class="text-light-gray mb-0">Brand</h5>
+                                <h5 class="text-light-gray mb-0">Sizes/Condition</h5>
+                                <div class="row">
+                                    <button class="btn bold col-6 p-0">Current Bid</button>
+                                    <button class="btn text-mustard bold col-6 p-0">Direct Buy</button>
+                                    <h3 class="bold col-6 mb-0">$Price</h3>
+                                    <h3 class="bold col-6 mb-0">$Price</h3>
+                                    <p class="offset-6 text-light-gray">+Shipping</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </swiper>
+        </div>
+        <!-- Buyer and seller protection/Cheapest fees-->
+        <div class="d-md-block d-none mb-5">
+            <div class="row text-center ">
+                <div class="col-4 mt-5 mb-5 p-5">
+                    <img src="assets/img/icons/bag-icon.png" alt="">
+                    <h5 class="mt-2 bold">Buyer Protection</h5>
+                    <h6>Once bought an item, always your money will be protected 14 days.</h6>
+                    <a routerLink="/login" class="bold text-primary no-decoration">See more</a>
+                </div>
+                <div class="col-4 mt-5 mb-5 p-5">
+                    <img src="assets/img/icons/box-icon.png" alt="">
+                    <h5 class="mt-2 bold">Seller Protection</h5>
+                    <h6>Control all yours orders easily and secure
+                        all yours orders with our confirmation system.</h6>
+                        <a routerLink="/login" class="bold text-primary no-decoration">See more</a>
+                </div>
+                <div class="col-4 mt-5 mb-5 p-5">
+                    <img src="assets/img/icons/fee-icon.png" alt="">
+                    <h5 class="mt-2 bold">Cheapest Fees</h5>
+                    <h6>Sell your clothing with the lowest fees among our competitors.</h6>
+                    <a routerLink="/login" class="bold text-primary no-decoration">See more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Banner for Sign Up -->
+    <div class="container-fluid">
+        <div class="row mt-5">
+            <div class="col-12 text-center bg-light-blue p-5">
+                <h1 class="bold">Marketplace for everyone.</h1>
+                <h1 class="bold">Clothing for everyone.</h1>
+                <!-- Signup Button -->
+                <button routerLink="/sign-up" class="btn btn-signup bg-black text-white mt-4 px-5 bold">Sign Up</button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <footer>
+            <!-- Footer Content-->
+            <div class="row mt-5 mb-5 py-3">
+                <div class="col-5 col-sm-5 col-md-3">
+                    <h6 class="bold">Customer Service</h6>
+                    <h6>FAQ</h6>
+                    <h6>Returns & refunds</h6>
+                    <h6>Terms and conditions</h6>
+                    <h6>Privacy policy</h6>
+                </div>
+                <div class="col-3 col-sm-3 col-md-2">
+                    <h6 class="bold">Contact us</h6>
+                    <h6>Email</h6>
+                    <h6>Social Media</h6>
+                    <h6>Others</h6>
+                </div>
+                <div class="col-3 col-sm-3 col-md-2">
+                    <h6 class="bold">About us</h6>
+                    <h6>Our story</h6>
+                    <h6>Location</h6>
+                    <h6>News</h6>
+                </div>
+                <div class="col-12 col-sm-6 col-md-5 col-lg-4">
+                    <div class="row">
+                        <div class="col-10 col-sm-12">
+                            <!-- Logo -->
+                            <img src="assets/img/logo-beta.svg" alt="logo TheSneakersMob" class="logo">
+                        </div>
+                        <!-- Social media buttons -->
+                        <a class="btn text-light-gray no-decoration col-4" href="https://instagram.com/thesneakersmob?igshid=mdb1qwwezi3y">
+                            <i class="fab fa-instagram fa-3x"></i>
+                        </a>
+                        <a class="btn text-light-gray no-decoration col-4" href="https://facebook.com/">
+                            <i class="fab fa-facebook-square fa-3x"></i>
+                        </a>
+                        <a class="btn text-light-gray no-decoration col-4" href="https://twitter.com/">
+                            <i class="fab fa-twitter fa-3x"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <br>
+                    <p>© 2021 El Negro Studios Projects.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</section>

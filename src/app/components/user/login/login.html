@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login TheSneakersMob</title>
+	<link rel="shortcut icon" href="./assets/img/favicon-32x32.png" />
+	<!-- Estilos -->
+	<link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./assets/css/style.css">
+	<!-- De login -->
+	<style type="text/css">
+		.fa-facebook{
+			font-size: 25px;
+			margin-right: 10px;
+		}
+		
+		@media (min-height: 635px) {
+			.largo{
+			height: 100vh;
+			}
+			footer{
+				position: absolute !important;
+				bottom: 0;
+				width: auto !important;
+			}
+		}
+
+		footer{
+				position: static;
+				width: auto !important;
+			}
+		.logo{
+			width: 100%;
+		}
+
+
+		/*animation*/
+		.bg-animation{
+			background: url('./assets/img/login-1.jpg');
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			animation: opa 25s;
+			animation-iteration-count: infinite;
+		}
+
+		@keyframes opa {
+				0%{opacity: 0;
+				background: url('./assets/img/login-1.jpg');
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				}
+				5%{opacity: 1;
+				background: url('./assets/img/login-1.jpg');
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;}
+
+				45%{opacity: 1;
+				background: url('./assets/img/login-1.jpg');
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;}
+
+				50%{opacity: 0;
+				background: url('./assets/img/login-1.jpg');
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;}
+
+				55%{opacity: 1;
+				background: url('./assets/img/login-2.jpg');
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;}
+
+				95%{opacity: 1;
+				background: url('./assets/img/login-2.jpg');
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;}
+
+				100%{opacity: 0;
+				background: url('./assets/img/login-2.jpg');
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;}
+		}
+	</style>
+</head>
+<body>
+
+	<div class="container-fluid">
+		<div class="row d-flex justify-content-center align-items-stretch bg-white">
+			<div class="col-lg-6 col-md-6 bg-animation d-sm-none d-none d-md-flex">
+				
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-10 bg-white largo">
+				<div class="row d-flex justify-content-center align-items-center h-full">
+					<div class="col-lg-7 col-md-9 col-sm-12 col-12 bg-white mt-1 mb-1 box px-4">
+						<img src="./assets/img/logo.png" class="logo" alt="logo de TheSneakersMob">
+						<form action="#">
+							<input type="text" class="form-control mt-4" placeholder="Username or email">
+							<input type="text" class="form-control mt-2" placeholder="Password">
+							<button class="btn btn-dark full mt-3" href="#">Login</button>
+						</form>
+						<div class="d-flex mt-3">
+							<div class="col-5"><hr></div>
+							<div class="col-2"><P class="text-center">OR</P></div>
+							<div class="col-5"><hr></div>
+						</div>
+						<div class="d-flex justify-content-center align-items-center">
+							<a class="btn btn-primary full bold d-flex justify-content-center" href="#"> <i class="text-white fab fa-facebook"></i> Log in with Facebook</a>
+						</div>
+						<p class="text-center small mt-3"><a href="#">Forgot password?</a></p>
+						<div class="mt-5 mb-5">
+							<p class="text-center">Don't have an account? <a href="#">Sign up</a></p>
+						</div>
+					</div>
+
+					<footer class="row mt-5">
+						<div class="col-12 d-flex justify-content-center">
+							<p class="small mt-3"><a class="text-dark" href="#">FAQ</a> - 
+							<a class="text-dark" href="#">Term and privacy</a></p>
+						</div>
+						<div class="col-12 d-flex justify-content-center">
+							<p class="small"><a class="text-dark" href="#">© 2021 El Negro Studios Projects</a></p>
+						</div>
+					</footer>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- font awesome -->
+<script type="text/javascript" src="./assets/js/all.min.js"></script>	
+</body>
+</html>

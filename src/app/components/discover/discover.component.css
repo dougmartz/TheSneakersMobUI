@@ -1,0 +1,77 @@
+#gallery {
+    margin: 1rem auto;
+    width:100%;
+    max-width:960px;
+    column-count: 4;
+    -webkit-column-span:all;
+    column-span:all;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    /*
+    -moz-column-rule: 1px solid #bbb;
+    -webkit-column-rule: 1px solid #bbb;
+    column-rule: 1px solid #bbb;*/
+}
+
+/* horizontal mobiles or vertical tablets*/
+
+@media (max-width: 767px) {
+    #gallery {
+        columns:4;
+    }
+
+}
+
+/* Vetical mobiles */
+@media (max-width: 480px) {
+    #gallery {
+        columns: 2;
+    }
+}
+
+.bg-img-discover {
+    object-fit: cover;
+}
+
+a.img-discover:hover img {
+    opacity: 0.8;
+}
+
+.text-img-discover, .price-img-discover, .btn-img-discover {
+    position: absolute;
+    display: none;
+    bottom: 0;
+    z-index: 1;
+}
+
+.img-discover:hover .text-img-discover {
+    display: block;
+}
+
+.img-discover:hover .price-img-discover {
+    display: block;
+}
+
+.img-discover:hover .btn-img-discover {
+    display: block;
+}
+
+.text-img-discover, p {
+    margin-top: -20px;
+    left: 5%;
+    text-align: left;
+}
+
+.price-img-discover, h5 {
+    margin-top: -20px;
+    right: 10%;
+}
+
+.btn-img-discover, i {
+    top: 5%;
+    right: 5%;
+}
+
+.fa-gratipay{
+    color: rgba(248, 113, 113, 0.911);
+}

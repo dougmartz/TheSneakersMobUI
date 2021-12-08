@@ -1,0 +1,167 @@
+/* Navbar Items */
+app-nav-items {
+    position: absolute;
+    background-color: transparent !important;
+    z-index: 1;
+}
+
+/* Banner/slider */
+.img-banner {
+    width: 100%;
+    height: 400px;
+    margin: auto;
+}
+
+.banner {
+    padding: 0px;
+}
+
+/* Shop by your style sections */
+.bg-img-style {
+    object-fit: cover;
+    height: 300px;
+    width: 250px;
+    border-radius: 10px;
+}
+
+.text-shop-style {
+    position: absolute;
+    top: 5%;
+    left: 10%;
+}
+
+/*Our sections sections*/
+.bg-img-sections {
+    object-fit: cover;
+    height: 150px;
+    width: 320px;
+    border-radius: 10px;
+}
+
+.text-shop-sections {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    text-align: left;
+    border-radius: 10px;
+}
+
+/*Shop by Clothing sections*/
+.swiper-wrapper {
+    box-sizing: border-box;
+}
+
+.bg-img-clothing {
+    object-fit: cover;
+    width: 125px;
+    height: 125px;
+    border-radius: 100px;
+}
+
+/* For Sell / Auction sections*/
+.card {
+    margin: auto;
+    width: 15rem;
+}
+
+.card-img-top {
+    height: 225px;
+    width: 225px;
+    margin: auto;
+    border-radius: 10px;
+}
+
+/* Progress bar for Auction sections*/
+.progress, .progress-bar {
+    height: 10px;
+}
+
+/* Seller/Buyer Protection*/
+.btn-signup {
+    border-radius: 100px;
+    border: 1px solid black;
+}
+
+/* Resolution media queries*/
+@media (max-width:1200px) {
+    .img-banner {
+        height: 300px;
+    }
+    .bg-img-style {
+        height: 250px;
+        width: 200px;
+    }
+    .bg-img-sections {
+        height: 130px;
+        width: 300px;
+    }
+    .bg-img-clothing {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media(max-width:768px){
+    .logo {
+        margin-left: auto;
+    }
+    .img-banner {
+        height: 250px;
+    }
+    .bg-img-style {
+        height: 120px;
+        width: 300px;
+    }
+    .bg-img-sections {
+        height: 100px;
+        width: 280px;
+    }
+    h4, h5 {
+        font-size: 2vw;
+    }
+    .text-shop-style {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media (max-width:600px) {
+    .img-banner {
+        height: 200px;
+    }
+    h4, h5 {
+        font-size: 3vw;
+    }
+}
+
+@media (max-width:380px) {
+    .img-banner {
+        height: 150px;
+    }
+    .bg-img-style {
+        height: 80px;
+        width: 150px;
+    }
+    .bg-img-sections {
+        height: 80px;
+        width: 160px;
+    }
+    .bg-img-clothing {
+        width: 50px;
+        height: 50px;
+    }
+    h4, p {
+        font-size: 4vw;
+    }
+    .card-body > h5 {
+        font-size: 5vw;
+    }
+}
+
+.swiper-button-next {
+    color: white;
+}
+

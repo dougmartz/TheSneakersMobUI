@@ -1,0 +1,96 @@
+.bg-logo, .hamburger {
+    position: absolute;
+}
+
+.bg-women {
+	background: url('/assets/img/selection-page/women.jpg');
+}
+
+.bg-men {
+    background: url('/assets/img/selection-page/men.jpg');
+}
+
+.bg-img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+@media (max-width: 900px) {
+    .h1s{
+        /*float: left;*/
+        transform: rotate(270deg);
+        /*transform-origin: left top 0;*/
+        /*margin-left: 50px;*/
+        /*padding: 10px;*/
+        background-color: rgba(37, 34, 34, 0.3);
+        opacity: 0.9;
+        /*font-size: 1.8em;*/
+        color: #FFF;
+        text-transform: uppercase;
+        margin-left: auto;
+        margin-right: auto;
+        /*margin-top: 50%;*/
+        margin-top: 50vh !important;
+    }
+}
+
+.h1s {
+    margin-top: 50%;
+    text-transform: uppercase;
+}
+
+.hv-full {
+	height: 100vh;
+}
+
+.bg-tb:hover {
+	background: #00000052;
+}
+
+.btn-menu, .btn-home {
+    text-decoration: none;
+    padding: 5px;
+    font-weight: 450;
+    font-size: 17px;
+    border: 1px solid white;
+    margin-inline: 5px;
+}
+
+.btn-menu:hover {
+    background: rgb(218, 218, 218);
+    border-radius: 6px;
+    border: 1px solid rgb(218, 218, 218);
+    margin-inline: 5px;
+}
+
+.btn-more-section {
+    width: 120px;
+    height: 80px;
+    font-weight: 450;
+    font-size: 17px;
+    border: 1px solid black;
+}
+
+.offcanvas {
+    width: 50%;
+    font-family: 'Arimo', sans-serif;
+}
+
+.offcanvas-body {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.offcanvas-footer {
+    background-color: rgb(218, 218, 218);
+    padding: 5px;
+}

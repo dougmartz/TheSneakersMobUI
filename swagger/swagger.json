@@ -1,0 +1,3302 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+      "title": "The SneakersMob API",
+      "version": "v1"
+    },
+    "servers": [
+      {
+        "url":"https://localhost:5001"
+      }
+    ],
+    "paths": {
+      "/api/Auction/Create": {
+        "post": {
+          "tags": [
+            "Auction"
+          ],
+          "description": "Sample request:\r\n            \r\n    POST api/Auction/Create\r\n    {\r\n        \"title\": \"First Auction\",\r\n        \"categoryId\": 1,\r\n        \"subCategoryId\": 1,\r\n        \"style\": \"Vintage\",\r\n        \"brandId\": 1,\r\n        \"sizeId\": 1,\r\n        \"color\": \"blue\",\r\n        \"condition\": \"New\",\r\n        \"description\": \"First Auction Description\",\r\n        \"initialPrize\": 10,\r\n        \"currency\": \"Dollar\",\r\n        \"isDirectBuyAllowed\": true,\r\n        \"directBuyPrize\": 20,\r\n        \"expireDate\": \"04/20/2020\",\r\n        \"photos\": [\r\n          {\r\n            \"title\": \"My photo\",\r\n            \"url\": \"http://myphoto.com\"\r\n          }\r\n        ],\r\n        \"hashTags\": [\r\n          \"awesome\",\"auction\",\"BidNow\"\r\n        ],\r\n        \"gender\": \"Male \"\r\n    }",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuctionForCreationDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuctionForCreationDto"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuctionForCreationDto"
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          },
+          "security": [
+            {
+              "oauth2": [
+                "TheSneakersMobAPI"
+              ]
+            }
+          ]
+        }
+      },
+      "/api/Auction/Edit/{id}": {
+        "put": {
+          "tags": [
+            "Auction"
+          ],
+          "description": "Sample request:\r\n            \r\n    PUT api/Auction/Edit/id\r\n    {\r\n      \"designers\": [\r\n        \"designer1\", \"designer2\"\r\n      ],\r\n      \"sizeId\": 2,\r\n      \"color\": \"white\",\r\n      \"condition\": \"SemiNew\",\r\n      \"description\": \"This auction has been edited\",\r\n      \"photos\": [\r\n        {\r\n          \"title\": \"MyPhoto\",\r\n          \"url\": \"https://editedphoto.com\"\r\n        }\r\n      ],\r\n      \"hashTags\": [\r\n        \"editing\",\"is\",\"awesome\"\r\n      ]\r\n    }",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuctionForEditDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuctionForEditDto"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuctionForEditDto"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "default": {
+              "description": "Error",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          },
+          "security": [
+            {
+              "oauth2": [
+                "TheSneakersMobAPI"
+              ]
+            }
+          ]
+        }
+      },
+      "/api/Auction/Delete/{id}": {
+        "delete": {
+          "tags": [
+            "Auction"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          },
+          "security": [
+            {
+              "oauth2": [
+                "TheSneakersMobAPI"
+              ]
+            }
+          ]
+        }
+      },
+      "/api/Auction/GetAuctions": {
+        "get": {
+          "tags": [
+            "Auction"
+          ],
+          "parameters": [
+            {
+              "name": "Category",
+              "in": "query",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "Subcategoy",
+              "in": "query",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "Style",
+              "in": "query",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "Brand",
+              "in": "query",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "Size",
+              "in": "query",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "Condition",
+              "in": "query",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "Country",
+              "in": "query",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "Gender",
+              "in": "query",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "SearchQuery",
+              "in": "query",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "PageNumber",
+              "in": "query",
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            },
+            {
+              "name": "PageSize",
+              "in": "query",
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AuctionSummaryDtoPagedResponse"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AuctionSummaryDtoPagedResponse"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AuctionSummaryDtoPagedResponse"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          },
+          "security": [
+            {
+              "oauth2": [
+                "TheSneakersMobAPI"
+              ]
+            }
+          ]
+        }
+      },
+      "/api/Auction/Get/{id}": {
+        "get": {
+          "tags": [
+            "Auction"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AuctionDetailDto"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AuctionDetailDto"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/AuctionDetailDto"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          },
+          "security": [
+            {
+              "oauth2": [
+                "TheSneakersMobAPI"
+              ]
+            }
+          ]
+        }
+      },
+      "/api/Auction/DirectBuy/{id}": {
+        "post": {
+          "tags": [
+            "Auction"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          },
+          "security": [
+            {
+              "oauth2": [
+                "TheSneakersMobAPI"
+              ]
+            }
+          ]
+        }
+      },
+      "/api/Auction/Bid/{id}": {
+        "post": {
+          "tags": [
+            "Auction"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BidDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BidDto"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BidDto"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          },
+          "security": [
+            {
+              "oauth2": [
+                "TheSneakersMobAPI"
+              ]
+            }
+          ]
+        }
+      },
+      "/api/Auction/Feedback/{id}": {
+        "post": {
+          "tags": [
+            "Auction"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostFeedbackDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostFeedbackDto"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostFeedbackDto"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          },
+          "security": [
+            {
+              "oauth2": [
+                "TheSneakersMobAPI"
+              ]
+            }
+          ]
+        }
+      },
+      "/api/Auction/Report/{id}": {
+        "post": {
+          "tags": [
+            "Auction"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReportAuctionDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReportAuctionDto"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReportAuctionDto"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          },
+          "security": [
+            {
+              "oauth2": [
+                "TheSneakersMobAPI"
+              ]
+            }
+          ]
+        }
+      },
+      "/api/Auction/Like/{id}": {
+        "post": {
+          "tags": [
+            "Auction"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          },
+          "security": [
+            {
+              "oauth2": [
+                "TheSneakersMobAPI"
+              ]
+            }
+          ]
+        }
+      },
+      "/api/Category/GetCategories": {
+        "get": {
+          "tags": [
+            "Category"
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/CategoryDetailDto"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/CategoryDetailDto"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/CategoryDetailDto"
+                  }
+                }
+              }
+            },
+            "default": {
+              "description": "Error",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/Discover/Get": {
+        "get": {
+          "tags": [
+            "Discover"
+          ],
+          "parameters": [
+            {
+              "name": "items",
+              "in": "query",
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/DiscoverDto"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/DiscoverDto"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/DiscoverDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/Profile/Get/{id}": {
+        "get": {
+          "tags": [
+            "Profile"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/GetProfileDto"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/GetProfileDto"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/GetProfileDto"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          },
+          "security": [
+            {
+              "oauth2": [
+                "TheSneakersMobAPI"
+              ]
+            }
+          ]
+        }
+      },
+      "/api/Profile/Edit/{id}": {
+        "put": {
+          "tags": [
+            "Profile"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EditProfileDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EditProfileDto"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EditProfileDto"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          },
+          "security": [
+            {
+              "oauth2": [
+                "TheSneakersMobAPI"
+              ]
+            }
+          ]
+        }
+      },
+      "/api/Profile/Follow/{id}": {
+        "post": {
+          "tags": [
+            "Profile"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          },
+          "security": [
+            {
+              "oauth2": [
+                "TheSneakersMobAPI"
+              ]
+            }
+          ]
+        }
+      },
+      "/api/Profile/UnFollow/{id}": {
+        "post": {
+          "tags": [
+            "Profile"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          },
+          "security": [
+            {
+              "oauth2": [
+                "TheSneakersMobAPI"
+              ]
+            }
+          ]
+        }
+      },
+      "/api/PromoCode/Create": {
+        "post": {
+          "tags": [
+            "PromoCode"
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CodeForCreationDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CodeForCreationDto"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CodeForCreationDto"
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          },
+          "security": [
+            {
+              "oauth2": [
+                "TheSneakersMobAPI"
+              ]
+            }
+          ]
+        }
+      },
+      "/api/Sell/Create": {
+        "post": {
+          "tags": [
+            "Sell"
+          ],
+          "description": "Sample request:\r\n            \r\n    POST api/Sell/Create\r\n    {\r\n        \"title\": \"Great offer\",\r\n        \"categoryId\": 1,\r\n        \"subCategoryId\": 1,\r\n        \"style\": \"Vintage\",\r\n        \"brandId\": 1,\r\n        \"designers\": [\r\n            \"string\"\r\n        ],\r\n        \"sizeId\": 1,\r\n        \"color\": \"white\",\r\n        \"condition\": \"New\",\r\n        \"description\": \"Great shoes\",\r\n        \"amount\": 10,\r\n        \"currency\": \"Dollar\",\r\n        \"photos\": [\r\n            {\r\n            \"title\": \"My Photo\",\r\n            \"url\": \"photo.com\"\r\n            }\r\n        ],\r\n        \"hashTags\": [\r\n            \"#great\",\"sneakers\",\"BuyThem\"\r\n        ],\r\n        \"gender\": \"Male\",\r\n        \"acceptCoupons\": false\r\n    }",
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SellForCreationDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SellForCreationDto"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SellForCreationDto"
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          },
+          "security": [
+            {
+              "oauth2": [
+                "TheSneakersMobAPI"
+              ]
+            }
+          ]
+        }
+      },
+      "/api/Sell/Edit/{id}": {
+        "put": {
+          "tags": [
+            "Sell"
+          ],
+          "description": "Sample request:\r\n            \r\n    PUT api/Sell/Edit/id\r\n    {\r\n        \"title\": \"Edit Sell\",\r\n        \"categoryId\": 2,\r\n        \"subCategoryId\": 102,\r\n        \"style\": \"Vintage\",\r\n        \"brandId\": 1,\r\n        \"designers\": [\r\n            \"Collaborator1\"\r\n        ],\r\n        \"sizeId\": 101,\r\n        \"color\": \"Black\",\r\n        \"condition\": \"OftenUsed\",\r\n        \"description\": \"This sell has been edited\",\r\n        \"amount\": 750,\r\n        \"photos\": [\r\n            {\r\n            \"title\": \"Photo1\",\r\n            \"url\": \"photo1.com\"\r\n            }\r\n        ],\r\n        \"hashTags\": [\r\n            \"edit\",\"is\",\"awesome\"\r\n        ]\r\n    }",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SellForEditDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SellForEditDto"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SellForEditDto"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "default": {
+              "description": "Error",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          },
+          "security": [
+            {
+              "oauth2": [
+                "TheSneakersMobAPI"
+              ]
+            }
+          ]
+        }
+      },
+      "/api/Sell/Delete/{id}": {
+        "delete": {
+          "tags": [
+            "Sell"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          },
+          "security": [
+            {
+              "oauth2": [
+                "TheSneakersMobAPI"
+              ]
+            }
+          ]
+        }
+      },
+      "/api/Sell/GetSells": {
+        "get": {
+          "tags": [
+            "Sell"
+          ],
+          "parameters": [
+            {
+              "name": "Category",
+              "in": "query",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "Subcategoy",
+              "in": "query",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "Style",
+              "in": "query",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "Brand",
+              "in": "query",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "Size",
+              "in": "query",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "Condition",
+              "in": "query",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "Country",
+              "in": "query",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "Gender",
+              "in": "query",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "SearchQuery",
+              "in": "query",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "PageNumber",
+              "in": "query",
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            },
+            {
+              "name": "PageSize",
+              "in": "query",
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/SellSummaryDtoPagedResponse"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/SellSummaryDtoPagedResponse"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/SellSummaryDtoPagedResponse"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          },
+          "security": [
+            {
+              "oauth2": [
+                "TheSneakersMobAPI"
+              ]
+            }
+          ]
+        }
+      },
+      "/api/Sell/Get/{id}": {
+        "get": {
+          "tags": [
+            "Sell"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/SellDetailDto"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/SellDetailDto"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/SellDetailDto"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          },
+          "security": [
+            {
+              "oauth2": [
+                "TheSneakersMobAPI"
+              ]
+            }
+          ]
+        }
+      },
+      "/api/Sell/Buy/{id}": {
+        "post": {
+          "tags": [
+            "Sell"
+          ],
+          "summary": "Creates a Payment Intent in Stripe and returns a client secret so that the flow can be completed on the client",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BuyDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BuyDto"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BuyDto"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          },
+          "security": [
+            {
+              "oauth2": [
+                "TheSneakersMobAPI"
+              ]
+            }
+          ]
+        }
+      },
+      "/api/Sell/Feedback/{id}": {
+        "post": {
+          "tags": [
+            "Sell"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostFeedbackDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostFeedbackDto"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PostFeedbackDto"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          },
+          "security": [
+            {
+              "oauth2": [
+                "TheSneakersMobAPI"
+              ]
+            }
+          ]
+        }
+      },
+      "/api/Sell/Report/{id}": {
+        "post": {
+          "tags": [
+            "Sell"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReportSellDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReportSellDto"
+                }
+              },
+              "application/*+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReportSellDto"
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          },
+          "security": [
+            {
+              "oauth2": [
+                "TheSneakersMobAPI"
+              ]
+            }
+          ]
+        }
+      },
+      "/api/Sell/Like/{id}": {
+        "post": {
+          "tags": [
+            "Sell"
+          ],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "401": {
+              "description": "Unauthorized"
+            },
+            "403": {
+              "description": "Forbidden"
+            }
+          },
+          "security": [
+            {
+              "oauth2": [
+                "TheSneakersMobAPI"
+              ]
+            }
+          ]
+        }
+      },
+      "/connect/oauth": {
+        "get": {
+          "tags": [
+            "Stripe"
+          ],
+          "parameters": [
+            {
+              "name": "state",
+              "in": "query",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "code",
+              "in": "query",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            }
+          }
+        }
+      },
+      "/api/Stripe/PaymentCompleted/webhook": {
+        "post": {
+          "tags": [
+            "Stripe"
+          ],
+          "responses": {
+            "200": {
+              "description": "Success"
+            },
+            "400": {
+              "description": "Bad Request",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            },
+            "default": {
+              "description": "Error",
+              "content": {
+                "text/plain": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                },
+                "text/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/ProblemDetails"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "Style": {
+          "enum": [
+            "Vintage",
+            "Luxury",
+            "Y2K",
+            "Streetwear"
+          ],
+          "type": "string"
+        },
+        "Condition": {
+          "enum": [
+            "New",
+            "SemiNew",
+            "OftenUsed",
+            "Used",
+            "VeryUsed"
+          ],
+          "type": "string"
+        },
+        "Currency": {
+          "enum": [
+            "Dollar",
+            "Euro"
+          ],
+          "type": "string"
+        },
+        "PhotoDto": {
+          "required": [
+            "title",
+            "url"
+          ],
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "url": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "Gender": {
+          "enum": [
+            "Male",
+            "Female",
+            "Unisex"
+          ],
+          "type": "string"
+        },
+        "AuctionForCreationDto": {
+          "required": [
+            "brandId",
+            "categoryId",
+            "color",
+            "condition",
+            "currency",
+            "description",
+            "expireDate",
+            "gender",
+            "hashTags",
+            "initialPrize",
+            "isDirectBuyAllowed",
+            "photos",
+            "sizeId",
+            "style",
+            "subCategoryId",
+            "title"
+          ],
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "categoryId": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "subCategoryId": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "style": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Style"
+                }
+              ]
+            },
+            "brandId": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "designers": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "nullable": true
+            },
+            "sizeId": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "color": {
+              "type": "string"
+            },
+            "condition": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Condition"
+                }
+              ]
+            },
+            "description": {
+              "type": "string"
+            },
+            "initialPrize": {
+              "maximum": 10000000000000000,
+              "minimum": 1,
+              "type": "number",
+              "format": "double"
+            },
+            "currency": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Currency"
+                }
+              ]
+            },
+            "isDirectBuyAllowed": {
+              "type": "boolean"
+            },
+            "directBuyPrize": {
+              "type": "number",
+              "format": "double",
+              "nullable": true
+            },
+            "expireDate": {
+              "type": "string"
+            },
+            "photos": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PhotoDto"
+              }
+            },
+            "hashTags": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "gender": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Gender"
+                }
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "ProblemDetails": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "nullable": true
+            },
+            "title": {
+              "type": "string",
+              "nullable": true
+            },
+            "status": {
+              "type": "integer",
+              "format": "int32",
+              "nullable": true
+            },
+            "detail": {
+              "type": "string",
+              "nullable": true
+            },
+            "instance": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": false
+          }
+        },
+        "AuctionForEditDto": {
+          "required": [
+            "color",
+            "condition",
+            "description",
+            "hashTags",
+            "photos",
+            "sizeId"
+          ],
+          "type": "object",
+          "properties": {
+            "designers": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "nullable": true
+            },
+            "sizeId": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "color": {
+              "type": "string"
+            },
+            "condition": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Condition"
+                }
+              ]
+            },
+            "description": {
+              "type": "string"
+            },
+            "photos": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PhotoDto"
+              }
+            },
+            "hashTags": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "BidSummaryDto": {
+          "type": "object",
+          "properties": {
+            "amount": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "AuctionSummaryDto": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "brand": {
+              "type": "string",
+              "nullable": true
+            },
+            "title": {
+              "type": "string",
+              "nullable": true
+            },
+            "description": {
+              "type": "string",
+              "nullable": true
+            },
+            "condition": {
+              "type": "string",
+              "nullable": true
+            },
+            "size": {
+              "type": "string",
+              "nullable": true
+            },
+            "initialPrize": {
+              "type": "string",
+              "nullable": true
+            },
+            "directBuyPrize": {
+              "type": "string",
+              "nullable": true
+            },
+            "bids": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/BidSummaryDto"
+              },
+              "nullable": true
+            },
+            "currentPrize": {
+              "type": "string",
+              "nullable": true
+            },
+            "mainPictureUrl": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "AuctionSummaryDtoPagedResponse": {
+          "type": "object",
+          "properties": {
+            "currentPage": {
+              "type": "integer",
+              "format": "int32",
+              "readOnly": true
+            },
+            "totalPages": {
+              "type": "integer",
+              "format": "int32",
+              "readOnly": true
+            },
+            "pageSize": {
+              "type": "integer",
+              "format": "int32",
+              "readOnly": true
+            },
+            "totalCount": {
+              "type": "integer",
+              "format": "int32",
+              "readOnly": true
+            },
+            "hasPrevious": {
+              "type": "boolean",
+              "readOnly": true
+            },
+            "hasNext": {
+              "type": "boolean",
+              "readOnly": true
+            },
+            "data": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/AuctionSummaryDto"
+              },
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "AuctionDetailDto": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "title": {
+              "type": "string",
+              "nullable": true
+            },
+            "category": {
+              "type": "string",
+              "nullable": true
+            },
+            "brand": {
+              "type": "string",
+              "nullable": true
+            },
+            "designers": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "nullable": true
+            },
+            "size": {
+              "type": "string",
+              "nullable": true
+            },
+            "color": {
+              "type": "string",
+              "nullable": true
+            },
+            "condition": {
+              "type": "string",
+              "nullable": true
+            },
+            "gender": {
+              "type": "string",
+              "nullable": true
+            },
+            "description": {
+              "type": "string",
+              "nullable": true
+            },
+            "initialPrize": {
+              "type": "string",
+              "nullable": true
+            },
+            "directBuyPrize": {
+              "type": "string",
+              "nullable": true
+            },
+            "lastBidAmount": {
+              "type": "string",
+              "nullable": true
+            },
+            "lastBidUserName": {
+              "type": "string",
+              "nullable": true
+            },
+            "expirationDate": {
+              "type": "string",
+              "nullable": true
+            },
+            "photos": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PhotoDto"
+              },
+              "nullable": true
+            },
+            "hashTags": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "nullable": true
+            },
+            "userName": {
+              "type": "string",
+              "nullable": true
+            },
+            "userCountry": {
+              "type": "string",
+              "nullable": true
+            },
+            "numberOfSells": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "userGeneralFeedback": {
+              "type": "number",
+              "format": "double"
+            },
+            "userProfilePhoto": {
+              "type": "string",
+              "nullable": true
+            },
+            "likes": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "additionalProperties": false
+        },
+        "BidDto": {
+          "type": "object",
+          "properties": {
+            "amount": {
+              "maximum": 10000000000000000,
+              "minimum": 1,
+              "type": "number",
+              "format": "double"
+            },
+            "currency": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Currency"
+                }
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "PostFeedbackDto": {
+          "type": "object",
+          "properties": {
+            "stars": {
+              "maximum": 5,
+              "minimum": 0,
+              "type": "integer",
+              "format": "int32"
+            },
+            "comment": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "Reason": {
+          "enum": [
+            "Bots",
+            "Fakes",
+            "MysteryBox",
+            "NotStreetWear",
+            "Raffle",
+            "Spamming",
+            "Offensive",
+            "Others"
+          ],
+          "type": "string"
+        },
+        "ReportAuctionDto": {
+          "type": "object",
+          "properties": {
+            "reason": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Reason"
+                }
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "SubcategoryDetailDto": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "name": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "SizeDetailDto": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "description": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "CategoryDetailDto": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "name": {
+              "type": "string",
+              "nullable": true
+            },
+            "subcategories": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/SubcategoryDetailDto"
+              },
+              "nullable": true
+            },
+            "sizes": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/SizeDetailDto"
+              },
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "DiscoverDto": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "type": {
+              "type": "string",
+              "nullable": true
+            },
+            "mainPictureUrl": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "GetFollowerDto": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "userName": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "GetProfileDto": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "registrationDate": {
+              "type": "string",
+              "nullable": true
+            },
+            "photoUrl": {
+              "type": "string",
+              "nullable": true
+            },
+            "avarageReview": {
+              "type": "number",
+              "format": "double"
+            },
+            "userName": {
+              "type": "string",
+              "nullable": true
+            },
+            "email": {
+              "type": "string",
+              "nullable": true
+            },
+            "firstName": {
+              "type": "string",
+              "nullable": true
+            },
+            "lastName": {
+              "type": "string",
+              "nullable": true
+            },
+            "country": {
+              "type": "string",
+              "nullable": true
+            },
+            "amountOfSells": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "amountOfBuys": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "followers": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/GetFollowerDto"
+              },
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "EditProfileDto": {
+          "required": [
+            "country",
+            "email",
+            "lastName",
+            "name"
+          ],
+          "type": "object",
+          "properties": {
+            "photoUrl": {
+              "type": "string",
+              "nullable": true
+            },
+            "name": {
+              "type": "string"
+            },
+            "lastName": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string",
+              "format": "email"
+            },
+            "country": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "CodeForCreationDto": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string",
+              "nullable": true
+            },
+            "discountPercentage": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "validFrom": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "validUntil": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "additionalProperties": false
+        },
+        "SellForCreationDto": {
+          "required": [
+            "amount",
+            "brandId",
+            "categoryId",
+            "color",
+            "condition",
+            "currency",
+            "description",
+            "gender",
+            "hashTags",
+            "photos",
+            "sizeId",
+            "style",
+            "subCategoryId",
+            "title"
+          ],
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "categoryId": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "subCategoryId": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "style": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Style"
+                }
+              ]
+            },
+            "brandId": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "designers": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "nullable": true
+            },
+            "sizeId": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "color": {
+              "type": "string"
+            },
+            "condition": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Condition"
+                }
+              ]
+            },
+            "description": {
+              "type": "string"
+            },
+            "amount": {
+              "maximum": 10000000000000000,
+              "minimum": 1,
+              "type": "number",
+              "format": "double"
+            },
+            "currency": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Currency"
+                }
+              ]
+            },
+            "gender": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Gender"
+                }
+              ]
+            },
+            "photos": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PhotoDto"
+              }
+            },
+            "hashTags": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "acceptCoupons": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        },
+        "SellForEditDto": {
+          "required": [
+            "amount",
+            "brandId",
+            "categoryId",
+            "color",
+            "condition",
+            "description",
+            "hashTags",
+            "photos",
+            "sizeId",
+            "style",
+            "subCategoryId",
+            "title"
+          ],
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "categoryId": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "subCategoryId": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "style": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Style"
+                }
+              ]
+            },
+            "brandId": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "designers": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "nullable": true
+            },
+            "sizeId": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "color": {
+              "type": "string"
+            },
+            "condition": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Condition"
+                }
+              ]
+            },
+            "description": {
+              "type": "string"
+            },
+            "amount": {
+              "maximum": 10000000000000000,
+              "minimum": 1,
+              "type": "number",
+              "format": "double"
+            },
+            "photos": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PhotoDto"
+              }
+            },
+            "hashTags": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "SellSummaryDto": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "brand": {
+              "type": "string",
+              "nullable": true
+            },
+            "title": {
+              "type": "string",
+              "nullable": true
+            },
+            "description": {
+              "type": "string",
+              "nullable": true
+            },
+            "condition": {
+              "type": "string",
+              "nullable": true
+            },
+            "size": {
+              "type": "string",
+              "nullable": true
+            },
+            "price": {
+              "type": "string",
+              "nullable": true
+            },
+            "mainPictureUrl": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "SellSummaryDtoPagedResponse": {
+          "type": "object",
+          "properties": {
+            "currentPage": {
+              "type": "integer",
+              "format": "int32",
+              "readOnly": true
+            },
+            "totalPages": {
+              "type": "integer",
+              "format": "int32",
+              "readOnly": true
+            },
+            "pageSize": {
+              "type": "integer",
+              "format": "int32",
+              "readOnly": true
+            },
+            "totalCount": {
+              "type": "integer",
+              "format": "int32",
+              "readOnly": true
+            },
+            "hasPrevious": {
+              "type": "boolean",
+              "readOnly": true
+            },
+            "hasNext": {
+              "type": "boolean",
+              "readOnly": true
+            },
+            "data": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/SellSummaryDto"
+              },
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "SellDetailDto": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "title": {
+              "type": "string",
+              "nullable": true
+            },
+            "category": {
+              "type": "string",
+              "nullable": true
+            },
+            "brand": {
+              "type": "string",
+              "nullable": true
+            },
+            "designers": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "nullable": true
+            },
+            "size": {
+              "type": "string",
+              "nullable": true
+            },
+            "color": {
+              "type": "string",
+              "nullable": true
+            },
+            "condition": {
+              "type": "string",
+              "nullable": true
+            },
+            "description": {
+              "type": "string",
+              "nullable": true
+            },
+            "price": {
+              "type": "string",
+              "nullable": true
+            },
+            "gender": {
+              "type": "string",
+              "nullable": true
+            },
+            "photos": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/PhotoDto"
+              },
+              "nullable": true
+            },
+            "hashTags": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "nullable": true
+            },
+            "userName": {
+              "type": "string",
+              "nullable": true
+            },
+            "userCountry": {
+              "type": "string",
+              "nullable": true
+            },
+            "numberOfSells": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "userGeneralFeedback": {
+              "type": "number",
+              "format": "double"
+            },
+            "userProfilePhoto": {
+              "type": "string",
+              "nullable": true
+            },
+            "likes": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "acceptCoupons": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        },
+        "BuyDto": {
+          "type": "object",
+          "properties": {
+            "promoCode": {
+              "type": "string",
+              "nullable": true
+            }
+          },
+          "additionalProperties": false
+        },
+        "ReportSellDto": {
+          "type": "object",
+          "properties": {
+            "reason": {
+              "allOf": [
+                {
+                  "$ref": "#/components/schemas/Reason"
+                }
+              ]
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "securitySchemes": {
+        "oauth2": {
+          "type": "oauth2",
+          "flows": {
+            "implicit": {
+              "authorizationUrl": "https://localhost:44364/connect/authorize",
+              "scopes": {
+                "TheSneakersMobAPI": "TheSneakersMob API"
+              }
+            }
+          }
+        }
+      }
+    }
+  }

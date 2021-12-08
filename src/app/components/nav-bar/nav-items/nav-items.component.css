@@ -1,0 +1,23 @@
+.nav-item, .fb {
+    font-size: 18px;
+    margin: 0;
+}
+
+.center-items{
+    width: 70%;
+    margin-left: auto;
+}
+
+.sex-items{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+p {
+    text-align: justify;
+}
+
+.p-20 {
+    width: 20%;
+}

@@ -1,0 +1,78 @@
+/*Animation background*/
+.bg-animation {
+    background: url('/assets/img/login/login-1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: opa 25s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes opa {
+    0% {
+        opacity: 0;
+        background: url('/assets/img/login/login-1.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    5% {
+        opacity: 1;
+        background: url('/assets/img/login/login-1.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    45% {
+        opacity: 1;
+        background: url('/assets/img/login/login-1.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    50% {
+        opacity: 0;
+        background: url('/assets/img/login/login-1.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    55% {
+        opacity: 1;
+        background: url('/assets/img/login/login-2.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    95% {
+        opacity: 1;
+        background: url('/assets/img/login/login-2.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    100% {
+        opacity: 0;
+        background: url('/assets/img/login/login-2.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+/* Form section*/
+.footer {
+    position: static;
+    width: auto !important;
+}
+
+@media (min-height: 635px) {
+    .long {
+        height: 100vh;
+    }
+    .footer{
+        position: absolute !important;
+        bottom: 0;
+        width: auto !important;
+    }
+}

@@ -1,0 +1,314 @@
+<!-- Selection page background -->
+<section>
+    <!-- TheSneakersMob's logo -->
+    <div class="row justify-content-center">
+        <img src="assets/img/logo.png" alt="" class="bg-logo col-10 col-sm-8 col-md-7 col-lg-6 col-xl-4">
+    </div>
+    <!-- Hamburger menu button-->
+    <!--
+    <button class="hamburger" type="button" >
+        <span class="hamburger-box" >
+            <span class="hamburger-inner" data-bs-toggle="offcanvas" data-bs-target="#menu" aria-controls="offcanvasExample"></span>
+        </span>
+    </button>
+    -->
+    <!-- Selections category columns -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Women's column -->
+            <div class="col-6 bg-women bg-img">
+                <div class="row">
+                    <a routerLink="/homepage" class="col-12 center hv-full bg-tb">
+                        <h1 class="text-white h1s">Women</h1>
+                    </a>
+                </div>
+            </div>
+            <!-- Men's column -->
+            <div class="col-6 bg-men bg-img">
+                <div class="row">
+                    <a routerLink="/homepage" class="col-12 center hv-full bg-tb">
+                        <h1 class="text-white h1s">Men</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Offcanvas -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="menu" aria-label="menuLabel">
+        <!-- Offcanvas header/tabs -->
+        <div class="offcanvas-header">
+            <ul class="nav nav-tabs" id="tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" type="button" id="women-tab" data-bs-toggle="tab" data-bs-target="#women" role="tab" aria-controls="women" aria-selected="true">
+                        WOMEN
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" type="button" id="men-tab" data-bs-toggle="tab" data-bs-target="#men" role="tab" aria-controls="men" aria-selected="true">
+                        MEN
+                    </button>
+                </li>
+            </ul>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="close"></button>
+        </div>
+        <!-- Offcanvas body -->
+        <div class="offcanvas-body">
+            <div class="row">
+                <div class="col-12 col-lg-12 col-xl-6">
+                    <div class="tab-content col-12 mb-0" id="tabContent">
+                        <!-- Tab pane for Women's section-->
+                        <div class="tab-pane fade show active" id="women" role="tabpanel" aria-labelledby="women-tab">
+                            <!-- Homepage women's button -->
+                            <button class="btn-home bg-white" type="button">Homepage</button>
+                            <!-- Menu womens's buttons -->
+                            <div class="d-flex align-items-start">
+                                <div class="nav flex-column nav-pills col-12" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                    <button class="btn-menu bg-btn-white" id="v-pills-oursections-women-tab" data-bs-toggle="pill" data-bs-target="#v-pills-oursections-women" type="button" role="tab" aria-controls="v-pills-oursections-women" aria-selected="true">
+                                        <div class="row">
+                                            <div class="text-black text-start col-10">Our sections</div>
+                                            <div class="col-2">
+                                                <i class="fas fa-angle-right"></i>
+                                            </div>
+                                        </div>
+                                    </button>
+                                    <button class="btn-menu bg-btn-white" id="v-pills-footwear-women-tab" data-bs-toggle="pill" data-bs-target="#v-pills-footwear-women" type="button" role="tab" aria-controls="v-pills-footwear-women" aria-selected="true">
+                                        <div class="row justify-content-between">
+                                            <div class="text-black text-start col-4">Footwear</div>
+                                            <div class="col-2">
+                                                <i class="fas fa-angle-right"></i>
+                                            </div>
+                                        </div>
+                                    </button>
+                                    <button class="btn-menu bg-btn-white" id="v-pills-tops-women-tab" data-bs-toggle="pill" data-bs-target="#v-pills-tops-women" type="button" role="tab" aria-controls="v-pills-tops-women" aria-selected="false">
+                                        <div class="row justify-content-between">
+                                            <div class="text-black text-start col-4">Tops</div>
+                                            <div class="col-2">
+                                                <i class="fas fa-angle-right"></i>
+                                            </div>
+                                        </div>
+                                    </button>
+                                    <button class="btn-menu bg-btn-white" id="v-pills-outerwear-women-tab" data-bs-toggle="pill" data-bs-target="#v-pills-outerwear-women" type="button" role="tab" aria-controls="v-pills-outerwear-women" aria-selected="false">
+                                        <div class="row justify-content-between">
+                                            <div class="text-black text-start col-4">Outerwear</div>
+                                            <div class="col-2">
+                                                <i class="fas fa-angle-right"></i>
+                                            </div>
+                                        </div>
+                                    </button>
+                                    <button class="btn-menu bg-btn-white" id="v-pills-tailoring-women-tab" data-bs-toggle="pill" data-bs-target="#v-pills-tailoring-women" type="button" role="tab" aria-controls="v-pills-tailoring-women" aria-selected="false">
+                                        <div class="row justify-content-between">
+                                            <div class="text-black text-start col-4">Tailoring</div>
+                                            <div class="col-2">
+                                                <i class="fas fa-angle-right"></i>
+                                            </div>
+                                        </div>
+                                    </button>
+                                    <button class="btn-menu bg-btn-white" id="v-pills-bottoms-women-tab" data-bs-toggle="pill" data-bs-target="#v-pills-bottoms-women" type="button" role="tab" aria-controls="v-pills-bottoms-women" aria-selected="false">
+                                        <div class="row justify-content-between">
+                                            <div class="text-black text-start col-4">Bottoms</div>
+                                            <div class="col-2">
+                                                <i class="fas fa-angle-right"></i>
+                                            </div>
+                                        </div>
+                                    </button>
+                                    <button class="btn-menu bg-btn-white" id="v-pills-accesories-women-tab" data-bs-toggle="pill" data-bs-target="#v-pills-accesories-women" type="button" role="tab" aria-controls="v-pills-accesories-women" aria-selected="false">
+                                        <div class="row justify-content-between">
+                                            <div class="text-black text-start col-4">Accesories</div>
+                                            <div class="col-2">
+                                                <i class="fas fa-angle-right"></i>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Tab pane for Men's section-->
+                        <div class="tab-pane fade men-pane" id="men" role="tabpanel" aria-labelledby="men-tab">
+                            <!-- Homepage men's button -->
+                            <button class="btn-home bg-white" type="button">Homepage</button>
+                            <!-- Menu mens's buttons -->
+                            <div class="d-flex align-items-start">
+                                <div class="nav flex-column nav-pills col-12" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                    <button class="btn-menu bg-btn-white" id="v-pills-oursections-men-tab" data-bs-toggle="pill" data-bs-target="#v-pills-oursections-men" type="button" role="tab" aria-controls="v-pills-oursections-men" aria-selected="true">
+                                        <div class="row justify-content-between">
+                                            <div class="text-black text-start col-10">Our sections</div>
+                                            <div class="col-2">
+                                                <i class="fas fa-angle-right"></i>
+                                            </div>
+                                        </div>
+                                    </button>
+                                    <button class="btn-menu bg-btn-white" id="v-pills-footwear-tab" data-bs-toggle="pill" data-bs-target="#v-pills-footwear" type="button" role="tab" aria-controls="v-pills-footwear" aria-selected="true">
+                                        <div class="row justify-content-between">
+                                            <div class="text-black text-start col-4">Footwear</div>
+                                            <div class="col-2">
+                                                <i class="fas fa-angle-right"></i>
+                                            </div>
+                                        </div>
+                                    </button>
+                                    <button class="btn-menu bg-btn-white" id="v-pills-tops-tab" data-bs-toggle="pill" data-bs-target="#v-pills-tops" type="button" role="tab" aria-controls="v-pills-tops" aria-selected="false">
+                                        <div class="row justify-content-between">
+                                            <div class="text-black text-start col-4">Tops</div>
+                                            <div class="col-2">
+                                                <i class="fas fa-angle-right"></i>
+                                            </div>
+                                        </div>
+                                    </button>
+                                    <button class="btn-menu bg-btn-white" id="v-pills-outerwear-tab" data-bs-toggle="pill" data-bs-target="#v-pills-outerwear" type="button" role="tab" aria-controls="v-pills-outerwear" aria-selected="false">
+                                        <div class="row justify-content-between">
+                                            <div class="text-black text-start col-4">Outerwear</div>
+                                            <div class="col-2">
+                                                <i class="fas fa-angle-right"></i>
+                                            </div>
+                                        </div>
+                                    </button>
+                                    <button class="btn-menu bg-btn-white" id="v-pills-tailoring-tab" data-bs-toggle="pill" data-bs-target="#v-pills-tailoring" type="button" role="tab" aria-controls="v-pills-tailoring" aria-selected="false">
+                                        <div class="row justify-content-between">
+                                            <div class="text-black text-start col-4">Tailoring</div>
+                                            <div class="col-2">
+                                                <i class="fas fa-angle-right"></i>
+                                            </div>
+                                        </div>
+                                    </button>
+                                    <button class="btn-menu bg-btn-white" id="v-pills-bottoms-tab" data-bs-toggle="pill" data-bs-target="#v-pills-bottoms" type="button" role="tab" aria-controls="v-pills-bottoms" aria-selected="false">
+                                        <div class="row justify-content-between">
+                                            <div class="text-black text-start col-4">Bottoms</div>
+                                            <div class="col-2">
+                                                <i class="fas fa-angle-right"></i>
+                                            </div>
+                                        </div>
+                                    </button>
+                                    <button class="btn-menu bg-btn-white" id="v-pills-accesories-tab" data-bs-toggle="pill" data-bs-target="#v-pills-accesories" type="button" role="tab" aria-controls="v-pills-accesories" aria-selected="false">
+                                        <div class="row justify-content-between">
+                                            <div class="text-black text-start col-4">Accesories</div>
+                                            <div class="col-2">
+                                                <i class="fas fa-angle-right"></i>
+                                            </div>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <!-- Sigup/Login buttons -->
+                        <div class="row justify-content-evenly">
+                            <button routerLink="/signup" class="btn bg-black text-white col-5" type="button">Sign Up</button>
+                            <button routerLink="/login" class="btn bg-black text-white col-5" type="button">Log In</button>
+                        </div>
+                        <br>
+                        <!-- "More about TSM" section -->
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <h6 class="bold">More about TheSneakersMob</h6>
+                            </div>
+                            <!-- Faq/Buyers/Sellers buttons -->
+                            <div class="col-12 col-sm-4 col-lg-4">
+                                <button class="btn-more-section bg-black text-white" type="button">FAQ</button>
+                            </div>
+                            <div class="col-12 col-sm-4 col-lg-4">
+                                <button class="btn-more-section bg-black text-white" type="button">Buyers Protection</button>
+                            </div>
+                            <div class="col-12 col-sm-4 col-lg-4">
+                                <button class="btn-more-section bg-black text-white" type="button">Sellers Protection</button>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+                <!--Images content column -->
+                <div class="col-lg-6 d-xl-block d-none d-lg-none">
+                    <div class="tab-content col-lg-12" id="v-pills-tabContent">
+                        <!-- Tab Women's image content -->
+                        <div class="tab-pane fade show active">
+                            <div class="row justify-content-center">
+                                <img src="assets/img/welcome-women.png" alt="" class="col-10 col-sm-8 col-md-7 col-lg-6 col-xl-10">
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-footwear-women" role="tabpanel" aria-labelledby="v-pills-footwear-women-tab">
+                            <div class="row justify-content-center">
+                                <img src="assets/img/footwear-women.png" alt="" class="col-10 col-sm-8 col-md-7 col-lg-6 col-xl-9">
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-tops-women" role="tabpanel" aria-labelledby="v-pills-tops-women-tab">
+                            <div class="row justify-content-center">
+                                <img src="assets/img/tops-women.png" alt="" class="col-10 col-sm-8 col-md-7 col-lg-6 col-xl-10">
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-outerwear-women" role="tabpanel" aria-labelledby="v-pills-outerwear-women-tab">
+                            <div class="row justify-content-center">
+                                <img src="assets/img/outerwear-women.png" alt="" class="col-10 col-sm-8 col-md-7 col-lg-6 col-xl-12">
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-tailoring-women" role="tabpanel" aria-labelledby="v-pills-tailoring-women-tab">
+                            <div class="row justify-content-center">
+                                <img src="assets/img/tailoring-women.jpg" alt="" class="col-10 col-sm-8 col-md-7 col-lg-6 col-xl-10">
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-bottoms-women" role="tabpanel" aria-labelledby="v-pills-bottoms-women-tab">
+                            <div class="row justify-content-center">
+                                <img src="assets/img/bottoms-women.png" alt="" class="col-10 col-sm-8 col-md-7 col-lg-6 col-xl-10">
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-accesories-women" role="tabpanel" aria-labelledby="v-pills-accesories-women-tab">
+                            <div class="row justify-content-center">
+                                <img src="assets/img/accesories-women.png" alt="" class="col-10 col-sm-8 col-md-7 col-lg-6 col-xl-12">
+                            </div>
+                        </div>
+                        <!-- Tab Men's image content -->
+                        <div class="tab-pane fade">
+                            <div class="row justify-content-center">
+                                <img src="assets/img/welcome-men.png" alt="" class="col-10 col-sm-8 col-md-7 col-lg-6 col-xl-10">
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-footwear" role="tabpanel" aria-labelledby="v-pills-footwear-tab">
+                            <div class="row justify-content-center">
+                                <img src="assets/img/footwear-men.png" alt="" class="col-10 col-sm-8 col-md-7 col-lg-6 col-xl-11">
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-tops" role="tabpanel" aria-labelledby="v-pills-tops-tab">
+                            <div class="row justify-content-center">
+                                <img src="assets/img/tops-men.png" alt="" class="col-10 col-sm-8 col-md-7 col-lg-6 col-xl-10">
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-outerwear" role="tabpanel" aria-labelledby="v-pills-outerwear-tab">
+                            <div class="row justify-content-center">
+                                <img src="assets/img/outerwear-men.png" alt="" class="col-10 col-sm-8 col-md-7 col-lg-6 col-xl-12">
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-tailoring" role="tabpanel" aria-labelledby="v-pills-tailoring-tab">
+                            <div class="row justify-content-center">
+                                <img src="assets/img/tailoring-men.png" alt="" class="col-10 col-sm-8 col-md-7 col-lg-6 col-xl-10">
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-bottoms" role="tabpanel" aria-labelledby="v-pills-bottoms-tab">
+                            <div class="row justify-content-center">
+                                <img src="assets/img/bottoms-men.png" alt="" class="col-10 col-sm-8 col-md-7 col-lg-6 col-xl-10">
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-accesories" role="tabpanel" aria-labelledby="v-pills-accesories-tab">
+                            <div class="row justify-content-center">
+                                <img src="assets/img/accesories-men.jpg" alt="" class="col-10 col-sm-8 col-md-7 col-lg-6 col-xl-12">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <!-- Social media buttons -->
+                    <a class="btn text-light-gray no-decoration" href="https://instagram.com/thesneakersmob?igshid=mdb1qwwezi3y">
+                        <i class="fab fa-instagram fa-2x"></i>
+                        @TheSneakersMob
+                    </a>
+                    <!-- Offcanvas footer -->
+                    <div class="row offcanvas-footer">
+                        <h6>© 2021 El Negro Studios Projects. All rights reserved.</h6>
+                        <div class="row justify-content-start">
+                            <div class="col-4 col-lg-1"><a class="no-decoration" href="">Terms</a></div>
+                            <div class="col-4 col-lg-1"><a class="no-decoration" href="">Policy</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

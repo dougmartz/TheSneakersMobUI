@@ -1,0 +1,46 @@
+/*Navbar properties*/
+.logo {
+    width: 100%;
+	margin-top: -5px;
+    margin-left: 10%;
+}
+
+.nav-header {
+    height: 75px;
+}
+
+.fa-search {
+    font-size: 20px;
+    position: relative;
+  	top: 40px;
+  	left: 25px;
+}
+
+.input-s {
+    border: 0px;
+    margin-top: 4px;
+    border-radius: 20px;
+    padding-left: 60px;
+  	font-size: 20px;
+}
+
+.input-s:hover {
+    margin-top: 4px;
+    background: #dfdbdb;
+    border: 0px;
+}
+
+.input-s:focus {
+    margin-top: 4px;
+    background: #dfdbdb;
+    border: 0px;
+}
+
+.btn-login, .btn-signup {
+    border-radius: 100px;
+    border: 1px solid black;
+}
+
+.bi-list {
+    font-size: 35px;
+}
