@@ -1,5 +1,5 @@
 # TheSneakersMobUI
-Frontend for the website 'TheSneakersMob' made in Angular, Node.js, Bootstrap v5.0
+Frontend for the website 'TheSneakersMob' made in Angular 11, Node.js, Bootstrap v5.0
 Development Setup
 
 Quickstart.
