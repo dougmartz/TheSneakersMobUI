@@ -38,6 +38,17 @@ export class HomepageComponent implements OnInit {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev'
     },*/
+    breakpoints: {
+      320: {
+        slidesPerView: 4
+      },
+      560: {
+        slidesPerView: 5
+      },
+      990: {
+        slidesPerView: 6
+      }
+    },
     slidesPerView: 6,
     spaceBetween: 1,
     loop: true
@@ -51,12 +62,12 @@ export class HomepageComponent implements OnInit {
     },*/
     breakpoints: {
       320: {
-        slidesPerView: 1
+        slidesPerView: 1.5
       },
-      560: {
+      500: {
         slidesPerView: 2
       },
-      990: {
+      900: {
         slidesPerView: 3
       },
       1200: {

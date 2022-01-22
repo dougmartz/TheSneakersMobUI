@@ -6,6 +6,9 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { SignUpComponent } from './components/user/sign-up/sign-up.component';
 import { DiscoverComponent } from './components/discover/discover.component';
+import { AuctionListingComponent } from './components/auction/auction-listing/auction-listing.component';
+import { SellListingComponent } from './components/sell/sell-listing/sell-listing.component';
+import { SellProductComponent } from './components/sell/sell-product/sell-product.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/selection', pathMatch:'full'},
@@ -14,6 +17,9 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'sign-up', component: SignUpComponent},
   { path: 'discover', component: DiscoverComponent},
+  { path: 'sell-listing', component: SellListingComponent},
+  { path: 'sell-product', component: SellProductComponent},
+  { path: 'auction-listing', component: AuctionListingComponent},
   { path: '**', redirectTo: '/selection', pathMatch:'full'}
 ];
 

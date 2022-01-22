@@ -59,8 +59,8 @@
     margin-right: auto;
 }
 
-p, a, button, h2, li, h1, h3, h4 {
-	font-family: Helvetica;
+p, a, button, li, h1, h2, h3, h4, h5, h6 {
+	font-family: Inter;
     color: black;
 }
 
@@ -90,4 +90,17 @@ p, a, button, h2, li, h1, h3, h4 {
 /* Zoom */
 #zoom-section {
     zoom: 80%;
+}
+
+/* For Sell / Auction sections*/
+.card {
+    margin: auto;
+    width: 15rem;
+}
+
+.card-img-top {
+    height: 225px;
+    width: 225px;
+    margin: auto;
+    border-radius: 10px;
 }

@@ -1,0 +1,33 @@
+.accordion-button {
+    background: none;
+    border-style: none;
+}
+
+li {
+    border-style: none;
+}
+
+.btn-like-sell-listing {
+    position: absolute;
+    z-index: 1;
+}
+
+.btn-like-sell-listing, i {
+    top: 5%;
+    right: 0%;
+}
+
+@media (max-width:767px) {
+    /* For Sell / Auction sections*/
+    .card {
+        width: 100%;
+    }
+}
+
+@media (max-width:450px) {
+    /* For Sell / Auction sections*/
+    .card-img-top {
+        height: 150px;
+        width: 150px;
+    }
+}

@@ -1,0 +1,143 @@
+<section id="zoom-section">
+    <div class="container-fluid">
+        <!-- Navbar -->
+        <app-nav-bar></app-nav-bar>
+        <div class="row bg-black mt-4 px-0">
+            <app-nav-items></app-nav-items>
+        </div>
+        <div class="row mt-md-5 ms-md-2 ms-lg-5 px-sm-3 px-md-2 px-lg-4 px-xl-5">
+            <!-- Product's Images Content -->
+            <div class="img-product col-12 col-sm-7 col-md-5 col-xl-4">
+                <div class="row">
+                    <!-- Swiper -->
+                    <swiper [config]="configSwiper">
+                        <div class="swiper-wrapper img-swiper">
+                            <!-- Image Product Slider -->
+                            <div class="swiper-slide">
+                                <div class="swiper-zoom-container">
+                                    <img src="assets/img/homepage/example.jpg" class="bg-img-product" alt="">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">Slide 2</div>
+                            <div class="swiper-slide">Slide 3</div>
+                            <div class="swiper-slide">Slide 4</div>
+                        </div>
+                        <!-- Add Arrows -->
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </swiper>
+                </div>
+            </div>
+            <!-- Product's Information / Description -->
+            <div class="product-info col-12 col-sm-5 col-md-4 ms-lg-1 ms-xl-5">
+                <button routerLink="/" class="btn btn-like text-light-gray bold col-3 col-sm-5 col-md-4 me-2 mt-3 mt-sm-0">
+                    <i class="far fa-heart"></i><!-- Like Button -->
+                    Like
+                </button>
+                <button routerLink="/" class="btn btn-marker text-light-gray bold col-3 offset-7 offset-sm-0 mt-3 mt-sm-0 ">
+                    <i class="far fa-flag"></i><!-- Marker Button -->
+                </button>
+                <h1 class="bold mt-3 mb-0">Title</h1>
+                <h4 class="text-light-gray">Brand</h4>
+                <!-- Items Description -->
+                <div class="accordion accordion-flush col-12 col-md-12" id="item-description">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed bold px-0 py-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                <h5 class="bold">Items Details</h5>
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#item-description">
+                            <!-- Items Description Content -->
+                            <div class="accordion-body">
+                                Description
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="bold">$Prices</h2>
+                <div class="row mb-3">
+                    <div class="col-8 col-sm-12 col-md-8 col-lg-7 col-xl-5">
+                        <h5 class="bold">Shipping Price to </h5>
+                    </div>
+                    <!-- Location Dropdown Button -->
+                    <div class="col-4 col-sm-12 col-md-4 col-lg-5 col-xl-7">
+                        <div class="dropdown">
+                            <button class="btn text-black bg-ultralight-gray dropdown-toggle py-0" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                Location
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <!-- Dropdown Button Content -->
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- "Buy Now" Button -->
+                <button routerLink="/" class="btn btn-buy-now bg-black col-12 col-xl-10 pb-0">
+                    <h4 class="text-white bold">Buy Now</h4>
+                </button>
+                <h6 class="text-center bold col-12 col-xl-10 mt-3 mb-0">Be covered by our buyer protection</h6>
+                <h6 class="text-center bold col-12 col-xl-10">
+                    <a routerLink="/" class="text-blue no-decoration">Learn about Buyer Protection</a> <!-- Redirect to Buyers Protection Section -->
+                </h6>
+            </div>
+            <!-- User's Information -->
+            <div class="col-12 col-md-2 col-lg-2 col-xl-2 mt-3 mt-lg-0 ms-md-5">
+                <div class="row user-info col-12 col-sm-4 col-md-12">
+                    <a href="" class="no-decoration col-1 col-md-4 col-lg-3 col-xl-2 me-2 me-sm-4 me-md-0 me-xl-2">
+                        <img src="assets/img/icons/user-icon.png" alt="" class="">
+                    </a>
+                    <h5 class="text-black bold col-10 col-sm-2 col-md-6 me-3 me-sm-2 me-md-0">Username <br><h6>Items</h6></h5>
+                    <button routerLink="/" class="btn btn-chat-now border-rounded bg-black col-4 col-sm-8 col-md-12 col-xl-10 ms-md-3 ms-lg-0 pb-0">
+                        <h6 class="text-white bold">Chat Now</h6>
+                    </button>
+                </div>
+                <div class="row">
+
+                </div>
+            </div>
+            <!-- Description section -->
+            <div class="col-12 col-md-8 mt-5">
+                <h4 class="bold">Description</h4>
+                <hr>
+                <!-- Description content -->
+                <h6>
+                    Ready to pour… the Font Awesome 6 Beta!
+                    The next generation of the web’s favorite icon library +
+                    toolkit is now available as a Beta release! Try out the
+                    Free version. Subscribe to Font Awesome Pro to get even more!
+                </h6>
+            </div>
+            <!-- "You May Also Like..." Section -->
+            <div class="col-12 mt-5 mb-5">
+                <h4 class="bold mb-4">You May Also Like</h4>
+                <swiper [config]="configSwiper2">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="assets/img/homepage/example.jpg" class="bg-img-alsolike border-rounded" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/img/homepage/example.jpg" class="bg-img-alsolike border-rounded" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/img/homepage/example.jpg" class="bg-img-alsolike border-rounded" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/img/homepage/example.jpg" class="bg-img-alsolike border-rounded" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/img/homepage/example.jpg" class="bg-img-alsolike border-rounded" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="assets/img/homepage/example.jpg" class="bg-img-alsolike border-rounded" alt="">
+                        </div>
+                    </div>
+                </swiper>
+            </div>
+        </div>
+    </div>
+</section>

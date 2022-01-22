@@ -1,0 +1,71 @@
+/* Image products*/
+.img-swiper {
+    height: 550px;
+}
+
+.bg-img-product, .bg-img-alsolike {
+    object-fit: cover;
+}
+
+.bg-img-product {
+    height: 100%;
+    width: 100%;
+}
+
+/* "Maybe Also like" Section*/
+.bg-img-alsolike {
+    height: 350px;
+    width: 300px;
+}
+
+/* Product Information Section*/
+.btn-buy-now, .btn-like, .btn-marker {
+    border-radius: 100px;
+}
+
+.btn-marker {
+    width: 40px;
+    height: 40px;
+}
+
+.btn-buy-now {
+    border: 1px solid black;
+}
+
+.btn-like, .btn-marker {
+    border: 1px solid #a6a6a6;
+}
+
+.username {
+    transform: translate(0, -50%);
+}
+
+/* Resolution media queries*/
+
+@media (min-width:576px) and (max-width:767px) {
+    .user-info {
+        margin-top: -150px;
+        margin-left: 60%;
+    }
+}
+@media (max-width:575px) {
+    .bg-img-product {
+        width: 100%;
+        margin: auto;
+    }
+    .img-product {
+        padding: 0px;
+    }
+    .product-info {
+        z-index: 1;
+        border-radius: 40px;
+        margin-top: -30px;
+        background: white;
+    }
+    .btn-chat-now {
+        margin-top: -50px;
+        padding-bottom: 0px;
+        margin-left: 50%;
+    }
+}
+

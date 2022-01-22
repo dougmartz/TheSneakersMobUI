@@ -8,7 +8,7 @@ app-nav-items {
 /* Banner/slider */
 .img-banner {
     width: 100%;
-    height: 400px;
+    height: 450px;
     margin: auto;
 }
 
@@ -60,19 +60,6 @@ app-nav-items {
     border-radius: 100px;
 }
 
-/* For Sell / Auction sections*/
-.card {
-    margin: auto;
-    width: 15rem;
-}
-
-.card-img-top {
-    height: 225px;
-    width: 225px;
-    margin: auto;
-    border-radius: 10px;
-}
-
 /* Progress bar for Auction sections*/
 .progress, .progress-bar {
     height: 10px;
@@ -87,7 +74,7 @@ app-nav-items {
 /* Resolution media queries*/
 @media (max-width:1200px) {
     .img-banner {
-        height: 300px;
+        height: 350px;
     }
     .bg-img-style {
         height: 250px;
@@ -100,6 +87,12 @@ app-nav-items {
     .bg-img-clothing {
         width: 80px;
         height: 80px;
+    }
+}
+
+@media (max-width:950px) {
+    .img-banner {
+        height: 300px;
     }
 }
 
@@ -137,7 +130,7 @@ app-nav-items {
     }
 }
 
-@media (max-width:380px) {
+@media (max-width:430px) {
     .img-banner {
         height: 150px;
     }
